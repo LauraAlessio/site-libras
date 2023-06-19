@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitck inc</title>
+    <link rel="stylesheet" href="bast.css">
+    <link rel="icon" href="pin.png">
+</head>
+
+    <body> 
+      
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+      
+    <section>
+        <div class="circ"></div>
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <ul>
+                <li><a href="bast.html"><b>Inicio</b></a></li>
+                <li><a href="https://www12.senado.leg.br/radio/1/noticia/2022/09/21/23-de-setembro-e-o-dia-internacional-das-linguas-de-sinais#:~:text=REPÓRTER%20CAROL%20TEIXEIRA.,Internacional%20das%20Línguas%20de%20Sinais."><b>Sobre</b></a></li>
+                <li><a href="cadastro.html"><b>Cadastre-se</b></a></li>
+            </ul>
+        </header>
+        
+        <div class="content">
+            <div class="textBox">
+            <h2>Dia Internacional das <br> <span>Línguas de Sinais.</span></h2>
+            <p> A Assembléia Geral da Nações Unidas declarou 23 de setembro como o Dia Internacional das Línguas de Sinais. A data, 
+                comemorada pela primeira vez em 2018, é uma homenagem ao dia em que a Federação Mundial dos Surdos foi criada em 1951. 
+                No Brasil, desde 2022, 24 de abril é reconhecido como o Dia Nacional da Língua Brasileira de Sinais. A Libras se tornou 
+                 uma ferramenta essencial para a inclusão de pessoas surdas, tendo várias iniciativas aprovadas e debatidas no Senado Federal.   </p>
+            <a href="https://www12.senado.leg.br/radio/1/noticia/2022/09/21/23-de-setembro-e-o-dia-internacional-das-linguas-de-sinais#:~:text=REPÓRTER%20CAROL%20TEIXEIRA.,Internacional%20das%20Línguas%20de%20Sinais.">Saiba mais</a>
+            <br><audio id="myAudio">
+                <source src="libras.mp3" type="audio/mpeg">
+            </audio>
+            
+            </div>
+            <div class="imgBox">
+                <img src="lib3.png" class="Bengala">
+            </div>
+        </div>
+        <ul class="resto">
+            <li><img src="lib1.png" onclick="imgSlider('lib1.png')"></li>
+            <li><img src="lib2.png" onclick="imgSlider('lib2.png')"></li>
+            <li><img src="lib3.png" onclick="imgSlider('lib3.png')"></li>
+        </ul>
+    </section>
+     <ul class="menu">
+            <div class="toggle">
+                <ion-icon name="accessibility-outline"></ion-icon>
+        </div>
+        <li style="--i:0;" class="active"><a href="#" onclick="playAudio()"><ion-icon name="volume-high-sharp">
+        </ion-icon></a></li>
+        <li style="--i:1;"><a href="#"><ion-icon name="eye-sharp">
+        </ion-icon></a></li>
+        <li style="--i:2;"><a href="#"><ion-icon name="mic-sharp">
+        </ion-icon></a></li>
+        <li style="--i:3;"><a href="#"><ion-icon name="hand-right-sharp">
+        </ion-icon></a></li>
+        <li style="--i:4;"><a href="#"><ion-icon name="search-sharp"></ion-icon></a></li>
+        <li style="--i:5;"><a href="#"><ion-icon name="language-sharp"></ion-icon></a></li>
+        <li style="--i:6;"><a href="#"><ion-icon name="eyedrop-sharp"></ion-icon></a></li>
+        <li style="--i:7;"><a href="#"><ion-icon name="book-sharp"></ion-icon></a></li>
+        
+        <div class="indicator">
+        </div>
+    </ul>
+    
+    <script>
+
+        function playAudio(){
+            let x = document.getElementById("myAudio");
+            x.play();
+        }
+        function pauseAudio(){
+            let x = document.getElementById("myAudio");
+            x.play();
+        }
+
+        let menuToggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+        menuToggle.onclick = function(){
+            menu.classList.toggle('active')
+            menuToggle.classList.toggle('active')
+        }
+
+        const list = document.querySelectorAll('li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        list.forEach((item) =>
+        item.addEventListener('click', activeLink))
+    </script>
+    <script type="text/javascript">
+        function imgSlider(anything){
+            document.querySelector('.Bengala').src = anything;
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

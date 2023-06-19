@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="aces.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="menu">
+        <div class="toggle">
+            <ion-icon name="accessibility-outline"></ion-icon>
+    </div>
+    <li style="--i:0;" class="active"><a href="#"><ion-icon name="volume-high-sharp">
+    </ion-icon></a></li>
+    <li style="--i:1;"><a href="#"><ion-icon name="eye-sharp">
+    </ion-icon></a></li>
+    <li style="--i:2;"><a href="#"><ion-icon name="mic-sharp">
+    </ion-icon></a></li>
+    <li style="--i:3;"><a href="#"><ion-icon name="hand-right-sharp">
+    </ion-icon></a></li>
+    <li style="--i:4;"><a href="#"><ion-icon name="search-sharp"></ion-icon></a></li>
+    <li style="--i:5;"><a href="#"><ion-icon name="language-sharp"></ion-icon></a></li>
+    <li style="--i:6;"><a href="#"><ion-icon name="eyedrop-sharp"></ion-icon></a></li>
+    <li style="--i:7;"><a href="#"><ion-icon name="book-sharp"></ion-icon></a></li>
+    
+    <div class="indicator">
+    </div>
+</ul>
+    <script>
+        let menuToggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+        menuToggle.onclick = function(){
+            menu.classList.toggle('active')
+            menuToggle.classList.toggle('active')
+        }
+
+        const list = document.querySelectorAll('li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        list.forEach((item) =>
+        item.addEventListener('click', activeLink))
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
